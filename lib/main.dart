@@ -1,4 +1,5 @@
 
+import 'package:appcosmetic/data/share/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -23,13 +24,13 @@ class BaseApp extends StatelessWidget {
       getPages: AppPages.routes,
       translationsKeys: AppTranslation.translations,
       locale: LanguageService.to.locale, // locale
-      fallbackLocale: Locale("en", "US"), // false back
+      fallbackLocale: Locale("en", "US"),
       theme: ThemeData(
-        primarySwatch: Colors.blue,
-        brightness: Brightness.light,
+        primaryColor: KanColors.primaryColor,
+        primaryColorDark: KanColors.primaryColor,
         visualDensity: VisualDensity.adaptivePlatformDensity,
-      ),
-      // home: HomeScreen()
+        brightness: Brightness.light,
+      ),// false back
     );
   }
 }

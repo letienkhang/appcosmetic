@@ -9,9 +9,11 @@ import '../../../../../data/share/constant.dart';
 import '../../../../../data/share/text_theme.dart';
 
 class EditTextSearchWidget extends StatelessWidget {
-  EditTextSearchWidget({Key? key, required this.searchTextController})
+  EditTextSearchWidget({Key? key, required this.searchTextController, required this.onTab, required this.clear})
       : super(key: key);
   TextEditingController searchTextController = TextEditingController();
+  final Function() onTab;
+  final Function() clear;
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +47,7 @@ class EditTextSearchWidget extends StatelessWidget {
             icon: const Icon(Icons.search),
             onPressed: () {
               FocusScope.of(context).unfocus();
+              onTab();
             },
           ),
           suffixIcon: IconButton(
@@ -52,6 +55,8 @@ class EditTextSearchWidget extends StatelessWidget {
             icon: const Icon(Icons.clear_sharp),
             onPressed: () {
               FocusScope.of(context).unfocus();
+              searchTextController.clear();
+              clear();
             },
           ),
         ));

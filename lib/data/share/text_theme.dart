@@ -177,3 +177,70 @@ TextTheme textTheme(BuildContext context) {
 TextTheme primaryTextTheme(BuildContext context) {
   return Theme.of(context).primaryTextTheme;
 }
+
+TextStyle safetyColorText(int number, BuildContext context) {
+  switch (number) {
+    case 1:
+      return textTheme(context).text16Bold.textValue1;
+      break;
+    case 2:
+      return textTheme(context).text16Bold.textValue2;
+      break;
+    case 3:
+      return textTheme(context).text16Bold.textValue3;
+      break;
+    case 4:
+      return textTheme(context).text16Bold.textValue4;
+      break;
+    case 5:
+      return textTheme(context).text16Bold.textValue5;
+      break;
+    default:
+      return textTheme(context).text16Bold.textValue5;
+  }
+
+}
+
+String safetyToString(int number) {
+  switch (number) {
+    case 1:
+      return 'Dễ kích ứng với da';
+      break;
+    case 2:
+      return 'Dễ kích ứng với da';
+      break;
+    case 3:
+      return 'Kích ứng với da';
+      break;
+    case 4:
+      return 'An toàn với da';
+      break;
+    case 5:
+      return 'An toàn với da';
+      break;
+    default:
+      return 'Chưa xác định';
+  }
+}
+
+String emoticonsText(int number) {
+  switch (number) {
+    case 1:
+      return ' 😱';
+      break;
+    case 2:
+      return ' 😩';
+      break;
+    case 3:
+      return ' 😐';
+      break;
+    case 4:
+      return ' 😊';
+      break;
+    case 5:
+      return ' 😘';
+      break;
+    default:
+      return ' 😘';
+  }
+}
